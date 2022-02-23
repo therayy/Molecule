@@ -1,8 +1,9 @@
 ---
 - name: Converge 
   hosts: all
-  # vars:
-  #   root: "/root/"
+  vars:
+    root: "root/"
+    repo: "https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git"
   tasks:
     - name: install updates
       command: apt update -y #cmd for updates on ubuntu
@@ -15,36 +16,42 @@
     
     - name: install tree #installing tree
       command: sudo apt-get install tree
-      # apt:
-      #   name: tree
-      #   state: present
-      #   update_cache: yes
 
-    - name: clone repo # cloning a repo
-      ansible.builtin.git:
-        repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git
-        dest: /root/gitops/multi-tenancy
+    # - name: clone repo # cloning a repo
+    #   ansible.builtin.git:
+    #     repo: {{repo}}
+    #     dest: /root/gitops/multi-tenancy
     #
     - name: add text to README.md file
       blockinfile:
-        path: "root/gitops/multi-tenancy/README.md"
+        path: "{{root}}gitops/multi-tenancy/README.md"
         block: |
           # I AM HERE
-    #
-    # - name: create sh script
-    #   file:
-    #     path: "{{ x }}script.sh"
-    #     state: touch
-    #
+    
+    - name: create sh script
+      file:
+        path: "{{root}}script.sh"
+        state: touch #to create the file 
+        #-rw-r--r-- 1 root "THERE IS NO Executable permision"
+    
+    - name: insert text into script
+      lineinfile:
+        path: "{{root}}script.sh"
+        line: "echo WELCOME-MOLECULE"
+
     # - name: insert text into script
     #   lineinfile:
-    #     path: "{{ x }}script.sh"
-    #     line: "pip install --upgrade pip"
-    #
-    # - name: set executable permission for script.sh
-    #   ansible.builtin.file:
-    #     path: "{{ x }}script.sh"
-    #     state: touch
-    #     mode: u=rwx,g=rwx,o=rwx
+    #     path: "{{root}}vagrant.sh"
+    #     line: "sudo apt install virtualbox"
+
+    # giving the script permission to Execute " adding the mode"
+    - name: set executable permission for script.sh
+      ansible.builtin.file:
+        path: "root/script.sh"
+        state: touch
+        mode: u=rwx,g=rwx,o=rwx 
+        #user: read write exec
+        #group: read write exec
+        #other: read write exec
 
 #multi-tenancy-gitops/blob/master/0-bootstrap/single-cluster/1-infra/kustomization.yaml
