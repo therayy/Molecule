@@ -50,13 +50,11 @@ ansible-galaxy install elastic.elasticsearch,v7.17.0
 
 ## To write the molecule.yml file you need to get the [image-info](https://hub.docker.com/_/ubuntu) you will be using
 
-## Make sure that your creating the files under that path molecule/default
-## Run the following command to start testing:
+### Make sure that your creating the files under that path molecule/default then Run the following command to start testing:
 ```
 molecule test
 ```
-        !!! Note
-        If you got this error:
+#### Note: If you got this error:
 ```    
 ERROR: Failed to pre-validate. {'driver': [{'name': ['unallowed value docker']}]}
 ```
