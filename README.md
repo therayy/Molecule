@@ -92,7 +92,11 @@ After applying all tasks `(Install update, install git, clone repo, create sh sc
 molecule login -h ubuntu-18.04
 or
 molecule login -h ubuntu-20.04
+or 
+docker exec it <CONTAINER ID> bash
 ```
+![alt tree](images/tree.png)
+
 When you are done and would like to remove the containers:
 
 ```
