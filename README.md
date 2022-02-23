@@ -1,4 +1,10 @@
 # Ansible Molecule
+- Setup the enviroment.
+- Writing Molecule yaml with tests to apply & 2 containers configuration.
+- Running an inital test.
+- Accessing Containers through molecule.
+- Working on the Deployments by writing a Converge yaml.
+- Installing & cloning and adding script to my containers using Converge.
 
 Make sure you have the following installed:
 
