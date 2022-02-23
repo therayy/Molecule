@@ -1,3 +1,6 @@
+--8<-- "ray.md"
+---
+
 # Ansible Molecule 
 
 # Step 1:
