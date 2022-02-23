@@ -52,7 +52,7 @@ Make sure that your creating the files under that path molecule/default then Run
 ```
 molecule test
 ```
-    Note: If you got this error:
+   Note: If you got this error:
          ```    
          ERROR: Failed to pre-validate. {'driver': [{'name': ['unallowed value docker']}]}
          ```
