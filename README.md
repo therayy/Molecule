@@ -62,17 +62,20 @@ pip3 install molecule-docker
 ```
 
 Re-run the molecule test command again and make sure you get this output
+
 ![alt text here](images/test1.png)
 ---
 
 Create the docker containers _(make sure you are one step back from the molecule directory )_
 
 ```
-bash
 cd ../../
 molecule create
 ```
+Confirm by running `docker ps` to see your containers
 
+![alt text here](images/containers.png)
+---
 ### Step 3
 
 Run the converge playbook file on both containers:
