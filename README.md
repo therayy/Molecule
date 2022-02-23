@@ -4,7 +4,7 @@
 
 Make sure you have the following installed:
 
-    !!! Note
+        Note
         -  Make sure you have python & pip 
         -  Make sure that your on the right directory.
 
