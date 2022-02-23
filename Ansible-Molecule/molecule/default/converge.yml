@@ -3,7 +3,7 @@
   hosts: all
   vars:
     root: "root/"
-    repo: "https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git"
+    # repo: "https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git"
   tasks:
     - name: install updates
       command: apt update -y #cmd for updates on ubuntu
@@ -17,10 +17,10 @@
     - name: install tree #installing tree
       command: sudo apt-get install tree
 
-    # - name: clone repo # cloning a repo
-    #   ansible.builtin.git:
-    #     repo: {{repo}}
-    #     dest: /root/gitops/multi-tenancy
+    - name: clone repo # cloning a repo
+      ansible.builtin.git:
+        repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops-services.git
+        dest: /root/gitops/multi-tenancy
     #
     - name: add text to README.md file
       blockinfile:
