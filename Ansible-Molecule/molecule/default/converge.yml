@@ -2,7 +2,7 @@
 - name: Converge 
   hosts: all
   # vars:
-  #   x: "/root/"
+  #   root: "/root/"
   tasks:
     - name: install updates
       command: apt update -y #cmd for updates on ubuntu
@@ -25,14 +25,11 @@
         repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git
         dest: /root/gitops/multi-tenancy
     #
-    # - name: add text to .bashrc file
-    #   blockinfile:
-    #     path: "{{ x }}.bashrc"
-    #     block: |
-    #       export PYENV_ROOT="/root/.pyenv"
-    #       export PATH="$PYENV_ROOT/bin:$PATH"
-    #       eval "$(pyenv init --path)"
-    #       eval "$(pyenv init -)"
+    - name: add text to README.md file
+      blockinfile:
+        path: "root/gitops/multi-tenancy/README.md"
+        block: |
+          # I AM HERE
     #
     # - name: create sh script
     #   file:
@@ -49,3 +46,5 @@
     #     path: "{{ x }}script.sh"
     #     state: touch
     #     mode: u=rwx,g=rwx,o=rwx
+
+#multi-tenancy-gitops/blob/master/0-bootstrap/single-cluster/1-infra/kustomization.yaml

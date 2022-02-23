@@ -97,34 +97,13 @@ docker exec it <CONTAINER ID> bash
 ```
 ![alt tree](images/tree.png)
 
-When you are done and would like to remove the containers:
+---
 
+Adding text to the README file for the repo that was cloned by adding that task.
 ```
-bash
-molecule destroy
-```
-
-### Get inside the containers
-
-Use the following command to see the created machine names:
-
-```
-bash
-molecule login
-```
-
-Use the following command to get inside the container:
-
-```
-bash
-molecule login -h <machine-name>
-```
-
-### For Testing
-
-You can run this to test creating > running converge > and destroy all at once:
-
-```
-bash
-molecule test
+    - name: add text to README.md file
+      blockinfile:
+        path: "root/<PATH>"
+        block: |
+          # I AM HERE
 ```
