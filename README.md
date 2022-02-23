@@ -107,3 +107,33 @@ Adding text to the README file for the repo that was cloned by adding that task.
         block: |
           # I AM HERE
 ```
+Adding a `Sriptfile` and giving it executable permisions:
+
+```
+    - name: create sh script
+      file:
+        path: "{{root}}script.sh"
+        state: touch
+```
+Inserting text into the script or commands
+
+```
+    - name: insert text into script
+      lineinfile:
+        path: "{{root}}script.sh"
+        line: "echo WELCOME-MOLECULE"
+```
+Adding permisions
+
+```
+    - name: set executable permission for script.sh
+      ansible.builtin.file:
+        path: "root/script.sh"
+        state: touch
+        mode: u=rwx,g=rwx,o=rwx
+```
+Delete containers
+
+```
+molecule destroy
+```
