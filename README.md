@@ -6,19 +6,19 @@ Make sure you have the following installed:
         -  Make sure you have python & pip 
         -  Make sure that your on the right directory.
 
-### Installing [pip / pip3](https://github.com/pypa/pip)
+Installing [pip / pip3](https://github.com/pypa/pip)
 
 ```
 python get-pip.py
 ```
 
-### Installing all requirments using pip _(make sure you stand inside the directory that contains the requirements file)_
+Installing all requirments using pip _(make sure you stand inside the directory that contains the requirements file)_
 
 ```
 pip3 install -r requirment.txt
 ```
 
-### Installing [Ansible](https://github.com/ansible/ansible.git), [Ansible-lint](https://github.com/ansible-community/ansible-lint.git) & [Molecule](https://github.com/ansible-community/molecule.git)
+Installing [Ansible](https://github.com/ansible/ansible.git), [Ansible-lint](https://github.com/ansible-community/ansible-lint.git) & [Molecule](https://github.com/ansible-community/molecule.git)
 
 ```
 brew install ansible
@@ -26,13 +26,13 @@ brew install ansible-lint
 brew install molecule
 ```
 
-### Installing [Molecule Vagrant](https://github.com/ansible-community/molecule-vagrant.git)
+Installing [Molecule Vagrant](https://github.com/ansible-community/molecule-vagrant.git)
 
 ```
 pip3 install molecule-vagrant
 ```
 
-### Installing [Test Infra](https://github.com/pytest-dev/pytest-testinfra.git)
+Installing [Test Infra](https://github.com/pytest-dev/pytest-testinfra.git)
 
 ```
 pip3 install pytest-testinfra
@@ -40,15 +40,15 @@ or
 pip install 'git+https://github.com/pytest-dev/pytest-testinfra@master#egg=pytest-testinfra'
 ```
 
-### Installing [Ansible-Elasticsearch](https://github.com/elastic/ansible-elasticsearch.git)
+Installing [Ansible-Elasticsearch](https://github.com/elastic/ansible-elasticsearch.git)
 
 ```
 ansible-galaxy install elastic.elasticsearch,v7.17.0
 ```
+---
+To write the molecule.yml file you need to get the [image-info](https://hub.docker.com/_/ubuntu) you will be using.
 
-### To write the molecule.yml file you need to get the [image-info](https://hub.docker.com/_/ubuntu) you will be using
-
-### Make sure that your creating the files under that path molecule/default then Run the following command to start testing:
+Make sure that your creating the files under that path molecule/default then Run the following command to start testing:
 ```
 molecule test
 ```
