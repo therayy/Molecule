@@ -55,8 +55,7 @@ molecule test
    Note: If you got this error:
          ```    
          ERROR: Failed to pre-validate. {'driver': [{'name': ['unallowed value docker']}]}
-         ```
-### Therefore you need to install molecule-docker package.
+         ```- Therefore you need to install molecule-docker package.
 
 ```
 pip3 install molecule-docker
