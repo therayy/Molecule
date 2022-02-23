@@ -17,11 +17,12 @@
     - name: install tree #installing tree
       command: sudo apt-get install tree
 
-    - name: clone repo # cloning a repo
-      ansible.builtin.git:
-        repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops-services.git
-        dest: /root/gitops/multi-tenancy
-    #
+    # - name: clone repo # cloning a repo
+    #   ansible.builtin.git:
+    #     repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops-infra.git
+    #     dest: /root/ray
+    #     ignore_errors: yes
+
     - name: add text to README.md file
       blockinfile:
         path: "{{root}}gitops/multi-tenancy/README.md"
@@ -33,6 +34,9 @@
         path: "{{root}}script.sh"
         state: touch #to create the file 
         #-rw-r--r-- 1 root "THERE IS NO Executable permision"
+         #user: read write 
+        #group: read 
+        #other: read 
     
     - name: insert text into script
       lineinfile:
