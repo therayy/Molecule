@@ -6,7 +6,7 @@ Make sure you have the following installed:
 
     !!! Note
         -  Make sure you have python & pip 
-        -  Make sure that your on the right   directory.
+        -  Make sure that your on the right directory.
 
 ### Installing [pip / pip3](https://github.com/pypa/pip)
 ```
