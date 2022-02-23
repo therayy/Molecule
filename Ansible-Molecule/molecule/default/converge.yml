@@ -3,7 +3,6 @@
   hosts: all
   vars:
     root: "root/"
-    # repo: "https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git"
   tasks:
     - name: install updates
       command: apt update -y #cmd for updates on ubuntu
