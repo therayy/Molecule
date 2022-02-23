@@ -5,18 +5,18 @@
   #   x: "/root/"
   tasks:
     - name: install updates
-      command: apt update -y #cmd for updates on linux
+      command: apt update -y #cmd for updates on ubuntu
 
-    # - name: install git
-    #   apt:
-    #     name: git
-    #     state: present
-    #     update_cache: yes
-    #
-    # - name: clone repo
-    #   ansible.builtin.git:
-    #     repo: https://github.com/therayy/laravel-app.git
-    #     dest: "{{ x }}laravel-app"
+    - name: install git # installing git on both containers
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+    
+    - name: clone repo # cloning a repo
+      ansible.builtin.git:
+        repo: https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git
+        dest: /root/gitops/multi-tenancy
     #
     # - name: add text to .bashrc file
     #   blockinfile:

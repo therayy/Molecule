@@ -63,7 +63,7 @@ pip3 install molecule-docker
 
 Re-run the molecule test command again and make sure you get this output
 
-![alt text here](images/test1.png)
+![alt test](images/test1.png)
 ---
 
 Create the docker containers _(make sure you are one step back from the molecule directory )_
@@ -72,20 +72,27 @@ Create the docker containers _(make sure you are one step back from the molecule
 cd ../../
 molecule create
 ```
-Confirm by running `docker ps` to see your containers
+Verify by running `docker ps` check your containers
 
-![alt text here](images/containers.png)
+![alt containers](images/containers.png)
 ---
-### Step 3
 
-Run the converge playbook file on both containers:
+Now we have two containers we need to run the `converge.yml` playbook file on both containers to apply the tasks:
 
-```bash
+```
 molecule converge
 ```
+Once the tasks are applied you should be able to verify it through your terminal i.e:
 
-### Step 4
+![alt tasks](images/tasks.png)
 
+After applying all tasks `(Install update, install git, clone repo, create sh script ..etc)` we need to verify that by logging in to the containers.
+
+```
+molecule login -h ubuntu-18.04
+or
+molecule login -h ubuntu-20.04
+```
 When you are done and would like to remove the containers:
 
 ```
