@@ -1,4 +1,5 @@
 # Ansible Molecule
+- Value & use case.
 - Setup the enviroment.
 - Writing Molecule yaml with tests to apply & 2 containers configuration.
 - Running an inital test.
