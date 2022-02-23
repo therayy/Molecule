@@ -4,8 +4,8 @@
   # vars:
   #   x: "/root/"
   tasks:
-    - name: install updates
-      command: apt update -y #cmd for updates on linux
+    # - name: install updates
+    #   command: apt update -y #cmd for updates on linux
 
     # - name: install git
     #   apt:
@@ -13,10 +13,10 @@
     #     state: present
     #     update_cache: yes
     #
-    # - name: clone repo
-    #   ansible.builtin.git:
-    #     repo: https://github.com/johnbedeir/laravel-app.git
-    #     dest: "{{ x }}laravel-app"
+    - name: clone repo
+      ansible.builtin.git:
+        repo: https://github.com/johnbedeir/laravel-app.git
+        dest: "{{ x }}laravel-app"
     #
     # - name: add text to .bashrc file
     #   blockinfile:
