@@ -145,8 +145,4 @@ Delete containers
 ```bash
 molecule destroy
 ```
-<<<<<<< Updated upstream
----
-=======
-testing with friends
->>>>>>> Stashed changes
+
