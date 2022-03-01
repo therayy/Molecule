@@ -5,21 +5,21 @@ platforms:
   - name: ubuntu-18.04 # 1st platform
     image: ubuntu:bionic-20210930 # image name
     networks:
-      - name: molecule-poc-patch-management
+      - name: molecule-poc-patch-management #possibilty to configure
     groups:
       - nodes # so we use groups in Ansible
 
   - name: ubuntu-20.04 # 2nd platform
     image: ubuntu:focal-20211006 # image name
     networks:
-      - name: molecule-poc-patch-management
+      - name: molecule-poc-patch-management #possibilty to configure
     groups:
       - nodes # so we use groups in Ansible
 
 scenario:
   name: default
   test_sequence:
-    - dependency # install any dependency if there is a requirements.txt file
+    # - dependency # install any dependency if there is a requirements.txt file
     - lint # make sure syntax all correct
     - destroy # destroy any leftover instences from the previous run to make sure we start from blank state
     - syntax # run syntax check on the playbook file to make sure ansible can execute it
