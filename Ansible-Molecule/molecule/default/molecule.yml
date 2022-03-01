@@ -1,20 +1,20 @@
 ---
 driver:
-  name: docker #what am building with
+  name: docker 
 platforms:
-  - name: ubuntu-18.04 # 1st platform
-    image: ubuntu:bionic-20210930 # image name
+  - name: ubuntu-18.04 
+    image: ubuntu:bionic-20210930 
     networks:
-      - name: molecule-poc-patch-management #possibilty to configure
+      - name: molecule-poc-patch-management 
     groups:
-      - nodes # so we use groups in Ansible
+      - nodes 
 
-  - name: ubuntu-20.04 # 2nd platform
-    image: ubuntu:focal-20211006 # image name
+  - name: ubuntu-20.04 
+    image: ubuntu:focal-20211006 
     networks:
-      - name: molecule-poc-patch-management #possibilty to configure
+      - name: molecule-poc-patch-management 
     groups:
-      - nodes # so we use groups in Ansible
+      - nodes 
 
 scenario:
   name: default
